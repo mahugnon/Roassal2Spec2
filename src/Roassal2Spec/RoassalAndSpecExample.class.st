@@ -18,7 +18,8 @@ RoassalAndSpecExample class >> defaultSpec [
 		add: #label height: self toolbarHeight;
 		add: #button1 height: self toolbarHeight;
 		add: #button2 height: self toolbarHeight;
-		add: #diagram
+		add: #diagram;
+		yourself
 ]
 
 { #category : #'instance creation' }
