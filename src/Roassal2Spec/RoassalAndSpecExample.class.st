@@ -1,6 +1,6 @@
 Class {
 	#name : #RoassalAndSpecExample,
-	#superclass : #ComposableModel,
+	#superclass : #SpPresenter,
 	#instVars : [
 		'label',
 		'diagram',
@@ -12,15 +12,13 @@ Class {
 }
 
 { #category : #specs }
-RoassalAndSpecExample class >> defaultSpec [ 
+RoassalAndSpecExample class >> defaultSpec [
 	<spec: #default>
-	^ SpecLayout composed
-		newColumn: [ :tcol|
-					tcol
-						add: #label height: self toolbarHeight;
-						add: #button1 height: self toolbarHeight;
-						add: #button2 height: self toolbarHeight;
-						add: #diagram ]
+	^ SpBoxLayout newVertical
+		add: #label height: self toolbarHeight;
+		add: #button1 height: self toolbarHeight;
+		add: #button2 height: self toolbarHeight;
+		add: #diagram
 ]
 
 { #category : #'instance creation' }
