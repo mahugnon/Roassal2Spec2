@@ -37,8 +37,11 @@ MorphicRoassalAdapter >> applyScript [
 
 { #category : #private }
 MorphicRoassalAdapter >> basicApplyScript [
-	self model script cull: view cull: canvas.
-	canvas focusOnCenterScaled.
+
+	self model script 
+		cull: view 
+		cull: canvas.
+		
 	self widgetDo: [ :w | w startStepping ]
 ]
 
@@ -52,10 +55,12 @@ MorphicRoassalAdapter >> buildWidget [
 
 { #category : #private }
 MorphicRoassalAdapter >> freeCanvas [
+
 	view := self buildWidget.
 	canvas := view setUpCanvas.
 	widget extent: canvas extent.
-	widget canvas: canvas
+
+	widget canvas: canvas.
 ]
 
 { #category : #protocol }

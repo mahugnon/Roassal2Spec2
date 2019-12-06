@@ -23,6 +23,11 @@ RTViewForSpec >> addElement: anElement [
 				do: [ :ann | lastEvent value: ann ] ]
 ]
 
+{ #category : #api }
+RTViewForSpec >> bindKeyCombination: aKMUntypeableSingleKeyCombination toAction: aBlockClosure [ 
+	
+]
+
 { #category : #initialization }
 RTViewForSpec >> initialize [
 
@@ -48,7 +53,7 @@ RTViewForSpec >> lastEventSubscriptionsDo: aBlock [
 ]
 
 { #category : #accessing }
-RTViewForSpec >> visible: aBoolean [ 
+RTViewForSpec >> visible: aBoolean [
 	visible := aBoolean
 ]
 

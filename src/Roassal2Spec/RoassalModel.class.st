@@ -21,11 +21,13 @@ RoassalModel class >> defaultSpec [
 
 { #category : #initialize }
 RoassalModel >> initialize [
+
 	super initialize.
-	script := [ :v :canvas |  ] asValueHolder.
+
+	script := [ :v :canvas | ] asValueHolder.
 	script whenChangedDo: [ :s | self refresh ].
 	self flag: 'Remove lastEvent'.
-	lastEvent := nil asValueHolder
+	lastEvent := nil asValueHolder.
 ]
 
 { #category : #accessing }

@@ -15,9 +15,14 @@ Class {
 RoassalAndSpecExample class >> defaultSpec [
 	<spec: #default>
 	^ SpBoxLayout newVertical
-		add: #label height: self toolbarHeight;
-		add: #button1 height: self toolbarHeight;
-		add: #button2 height: self toolbarHeight;
+		add: #label
+			withConstraints: [ :constraints | constraints height: self toolbarHeight ];
+		add: #label
+			withConstraints: [ :constraints | constraints height: self toolbarHeight ];
+		add: #button1
+			withConstraints: [ :constraints | constraints height: self toolbarHeight ];
+		add: #button2
+			withConstraints: [ :constraints | constraints height: self toolbarHeight ];
 		add: #diagram;
 		yourself
 ]

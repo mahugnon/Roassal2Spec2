@@ -6,7 +6,7 @@ SpecEasel  new openWithSpec
 "
 Class {
 	#name : #SpecEasel,
-	#superclass : #ComposablePresenter,
+	#superclass : #SpPresenter,
 	#instVars : [
 		'label',
 		'text',
@@ -17,17 +17,23 @@ Class {
 }
 
 { #category : #specs }
-SpecEasel class >> defaultSpec [ 
+SpecEasel class >> defaultSpec [
 	<spec: #default>
-	^ SpecLayout composed
-		newColumn: [:tcol|
-			tcol newRow: [:trow|
-				trow newColumn: [:left |
-					left
-						add: #label height: self toolbarHeight;
-						add: #text ;
-						add: #button height: self toolbarHeight ] width: 400.
-				trow add: #diagram]].
+	^ SpBoxLayout newVertical
+		add: #label
+			withConstraints: [ :constraints | constraints height: self toolbarHeight ];
+		add: #text
+			withConstraints: [ :constraints | constraints height: self toolbarHeight ];
+		add: #button
+			withConstraints: [ :constraints | constraints height: self toolbarHeight ];
+		add: #diagram;
+		yourself
+]
+
+{ #category : #examples }
+SpecEasel class >> run [
+	<example>
+	^ self new openWithSpec
 ]
 
 { #category : #accessing }
@@ -121,7 +127,7 @@ SpecEasel >> textAsCode [
 	"This could be made more clever with regard to compilation and runtime errors. But for this simple example it should suffice."
 
 	^ OpalCompiler new
-		source: '[:view :canvas | ' , self text getText asString , ']';
+		source: '[:view :canvas | ' , self text text asString , ']';
 		logged: false;
 		evaluate
 ]
