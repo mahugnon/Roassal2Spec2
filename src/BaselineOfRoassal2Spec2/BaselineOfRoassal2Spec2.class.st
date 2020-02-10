@@ -18,5 +18,5 @@ BaselineOfRoassal2Spec2 >> baseline: spec [
 BaselineOfRoassal2Spec2 >> baselineOfSpec2: spec [
 	spec
 		baseline: 'Spec2'
-		with: [ spec repository: 'github://pharo-spec/Spec:v0.1.0/src' ]
+		with: [ spec repository: 'github://pharo-spec/Spec:master/src' ]
 ]
