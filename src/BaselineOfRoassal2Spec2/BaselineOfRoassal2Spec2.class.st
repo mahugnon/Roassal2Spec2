@@ -7,10 +7,10 @@ Class {
 { #category : #baselines }
 BaselineOfRoassal2Spec2 >> baseline: spec [
 	<baseline>
-	spec for: #common do: [ self baselineOfSpec2: spec.
+	spec for: #common do: [ "self baselineOfSpec2: spec."
 		"packages"
 		spec package: 'Roassal2Spec'
-		with:[spec requires: #('Spec2')]
+		"with:[spec requires: #('Spec2')]"
 		]
 ]
 
